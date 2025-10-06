@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frozen Food Supply Chain</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> Frozen Food Supply Chain Management</h1>
+            <button id="connectBtn" onclick="connectWallet()">Connect Wallet</button>
+            <p id="walletAddress"></p>
+        </header>
+
+        <main>
+            <!-- Owner/Admin Section -->
+            <section class="role-section">
+                <h2> Owner: Register User</h2>
+                <div class="form-group">
+                    <input id="userAddress" placeholder="User Ethereum Address (0x...)" type="text">
+                    <input id="userName" placeholder="User Name" type="text">
+                    <input id="userLocation" placeholder="User Location" type="text">
+                    <input id="userRole" placeholder="Role (0=NoRole, 1=Supplier, 2=Transporter, 3=Manufacturer, 4=Warehouse, 5=Distributor, 6=Retailer)" type="number" min="0" max="6">
+                    <button onclick="registerUser()">Register User</button>
+                </div>
+            </section>
+
+            <!-- Supplier Section -->
+            <section class="role-section">
+                <h2> Supplier: Create Raw Package</h2>
+                <div class="form-group">
+                    <input id="description" placeholder="Description" type="text">
+                    <input id="farmer" placeholder="Farmer Name" type="text">
+                    <input id="location" placeholder="Location" type="text">
+                    <input id="lotCode" placeholder="Lot Code" type="text">
+                    <input id="quantity" placeholder="Quantity" type="number">
+                    <input id="shipper" placeholder="Shipper Address" type="text">
+                    <input id="manufacturer" placeholder="Manufacturer Address" type="text">
+                    <input id="temperature" placeholder="Product Temperature (°C)" type="number">
+                    <button onclick="createRawPackage()">Create Raw Package</button>
+                </div>
+            </section>
+
+            <!-- Transporter Section -->
+            <section class="role-section">
+                <h2>Transporter: Load Consignment</h2>
+                <div class="form-group">
+                    <input id="pid" placeholder="Package / Batch ID" type="text">
+                    <input id="transportType" placeholder="Transport Type (0-2)" type="number" min="0" max="2">
+                    <button onclick="loadConsignment()">Load Consignment</button>
+                </div>
+            </section>
+
+            <!-- Manufacturer Section -->
+            <section class="role-section">
+                <h2> Manufacturer Operations</h2>
+                
+                <h3>Receive Raw Package</h3>
+                <div class="form-group">
+                    <input id="rawPackageId" placeholder="Raw Package ID" type="text">
+                    <button onclick="rawPackageReceived()">Receive Raw Package</button>
+                </div>
+
+                <h3>Create Frozen Batch</h3>
+                <div class="form-group">
+                    <input id="batchDescription" placeholder="Batch Description" type="text">
+                    <input id="rawMaterial" placeholder="Raw Package ID" type="text">
+                    <input id="batchQuantity" placeholder="Quantity" type="number">
+                    <input id="batchShipper" placeholder="Shipper Address" type="text">
+                    <input id="batchReceiver" placeholder="Warehouse Address" type="text">
+                    <button onclick="createFrozenBatch()">Create Frozen Batch</button>
+                </div>
+            </section>
+
+            <!-- Warehouse Section -->
+            <section class="role-section">
+                <h2>noWarehouse: Transfer to Distributor</h2>
+                <div class="form-group">
+                    <input id="warehouseBatchId" placeholder="Batch ID" type="text">
+                    <input id="warehouseShipper" placeholder="Shipper Address" type="text">
+                    <input id="distributor" placeholder="Distributor Address" type="text">
+                    <button onclick="transferToDistributor()">Transfer to Distributor</button>
+                </div>
+            </section>
+
+            <!-- Distributor Section -->
+            <section class="role-section">
+                <h2>Distributor: Transfer to Retailer</h2>
+                <div class="form-group">
+                    <input id="distBatchId" placeholder="Batch ID" type="text">
+                    <input id="distShipper" placeholder="Shipper Address" type="text">
+                    <input id="retailer" placeholder="Retailer Address" type="text">
+                    <button onclick="transferToRetailer()">Transfer to Retailer</button>
+                </div>
+            </section>
+
+            <!-- Event Logs -->
+            <section class="role-section">
+                <h2> Event Logs</h2>
+                <div id="eventLogs" class="logs"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Powered by Ethereum Smart Contracts</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

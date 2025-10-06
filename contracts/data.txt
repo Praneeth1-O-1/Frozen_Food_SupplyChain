@@ -1,0 +1,35 @@
+1️⃣ Supplier
+EthAddress: 0x5b38da6a701c568545dcfcb03fcb875f56beddc4
+Name: Supplier1
+Location: Chennai
+Role: 1
+
+2️⃣ Transporter
+EthAddress: 0x5b38da6a701c568545dcfcb03fcb875f56beddd0
+Name: Transporter1
+Location: Bangalore
+Role: 2
+
+3️⃣ Manufacturer
+EthAddress: 0x5b38da6a701c568545dcfcb03fcb875f56beddc1
+Name: Manufacturer1
+Location: Hyderabad
+Role: 3
+
+4️⃣ Warehouse
+EthAddress: 0x5b38da6a701c568545dcfcb03fcb875f56beddc2
+Name: Warehouse1
+Location: Madurai
+Role: 4
+
+5️⃣ Distributor
+EthAddress: 0x5b38da6a701c568545dcfcb03fcb875f56beddc3
+Name: Distributor1
+Location: Mumbai
+Role: 5
+
+6️⃣ Retailer
+EthAddress: 0x5b38da6a701c568545dcfcb03fcb875f56beddc5
+Name: Retailer1
+Location: Delhi
+Role: 6
