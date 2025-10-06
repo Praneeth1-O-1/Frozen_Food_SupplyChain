@@ -80,15 +80,15 @@ Transfer to Distributor/Warehouse: Enter batch ID and addresses.
 
 Event Logs: Track all blockchain events in real-time in the Event Logs section.
 
-Folder Structure
-bash
-Copy code
+##Folder Structure
 frozen-food-supply-chain/
 ├── index.html           # Main HTML frontend
 ├── style.css            # Frontend styling
 ├── app.js               # Frontend logic & Ethers.js interactions
 ├── README.md            # Project documentation
 └── screenshots/         # Optional: UI screenshots
+
+
 Smart Contract Deployment
 Write and compile your contract in Remix or Hardhat.
 
